@@ -1,0 +1,309 @@
+/* GENERAL RESET & VARIABLE WARNA COMBO BLUE GOLDEN YELLOW */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-light: #f4f7fa;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --primary-blue: #0b2545;       /* Biru Deep Navy Premium */
+    --accent-yellow: #fec107;     /* Kuning Emas Cerah */
+    --accent-dark-yellow: #d39e00;
+    --border-color: #cbd5e1;
+}
+
+.dark-theme {
+    --bg-primary: #08121e;
+    --bg-light: #0f2537;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #1e3a5f;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    transition: background 0.3s, color 0.3s;
+}
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section { padding: 80px 0; }
+.bg-light { background-color: var(--bg-light); }
+.hidden { display: none !important; }
+
+/* NAVBAR STYLE */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 75px;
+    background: rgba(11, 37, 69, 0.95); /* Dasar Biru */
+    backdrop-filter: blur(10px);
+    border-bottom: 3px solid var(--accent-yellow); /* Garis Pembatas Kuning */
+    z-index: 999;
+}
+
+.nav-container {
+    max-width: 1140px; height: 100%; margin: 0 auto; padding: 0 20px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.logo { font-size: 22px; font-weight: 800; color: #ffffff; text-decoration: none; letter-spacing: 0.5px; }
+.logo span { color: var(--accent-yellow); }
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links a { text-decoration: none; color: #cbd5e1; font-weight: 600; font-size: 14px; transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent-yellow); }
+.nav-actions { display: flex; align-items: center; gap: 20px; }
+.nav-btn { background: none; border: none; color: #ffffff; font-size: 18px; cursor: pointer; transition: color 0.2s; }
+.nav-btn:hover { color: var(--accent-yellow); }
+
+/* TOMBOL RUANG BELAJAR PREMIUM */
+.btn-belajar {
+    background-color: var(--accent-yellow);
+    color: #0b2545;
+    border: none; padding: 10px 20px; border-radius: 8px;
+    font-size: 13.5px; font-weight: 700; cursor: pointer;
+    transition: all 0.2s;
+}
+.btn-belajar:hover { background-color: #ffffff; color: #0b2545; transform: translateY(-2px); }
+
+/* HERO SECTION */
+.hero {
+    position: relative; height: 85vh;
+    background-image: url('foto.jpg'); background-size: cover; background-position: center;
+    display: flex; align-items: center; justify-content: center; text-align: center; color: #ffffff;
+}
+.hero-overlay {
+    position: absolute; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(11, 37, 69, 0.85), rgba(8, 18, 30, 0.95));
+}
+.hero-content { position: relative; max-width: 780px; z-index: 2; padding: 0 20px; }
+.badge { background-color: var(--accent-yellow); color: #0b2545; padding: 6px 14px; border-radius: 50px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.hero h1 { font-size: 42px; font-weight: 800; margin-top: 25px; line-height: 1.2; }
+.hero p { font-size: 16px; color: #e2e8f0; margin: 20px 0 35px 0; line-height: 1.6; }
+.hero-buttons { display: flex; gap: 15px; justify-content: center; }
+
+.btn-primary-click {
+    background-color: var(--accent-yellow); color: #0b2545; border: none;
+    padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 14px; cursor: pointer; transition: all 0.2s;
+}
+.btn-primary-click:hover { background-color: #ffffff; transform: translateY(-2px); }
+.btn-secondary {
+    background-color: rgba(255,255,255,0.1); color: white;
+    padding: 14px 28px; border-radius: 8px; text-decoration: none;
+    font-weight: 600; font-size: 14px; border: 1px solid rgba(255,255,255,0.3); transition: all 0.2s;
+}
+.btn-secondary:hover { background-color: rgba(255,255,255,0.2); color: var(--accent-yellow); }
+
+/* TITLES HEADER SECTION */
+.section-title { text-align: center; margin-bottom: 50px; }
+.section-title h2 { font-size: 28px; font-weight: 800; color: var(--text-main); }
+.section-title p { color: var(--text-muted); font-size: 14px; margin-top: 6px; }
+.section-title .line { width: 60px; height: 4px; background-color: var(--accent-yellow); margin: 15px auto 0 auto; border-radius: 2px; }
+
+/* TENTANG & VISI MISI STYLING */
+.about-p {
+    font-size: 15px; line-height: 1.7; color: var(--text-muted); margin-bottom: 18px; text-align: justify;
+}
+.about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: flex-start; }
+
+.visi-misi-box {
+    background-color: var(--bg-light); border-left: 5px solid var(--accent-yellow); padding: 20px; border-radius: 0 12px 12px 0; margin-top: 25px;
+}
+.vm-badge {
+    display: inline-block; background-color: var(--primary-blue); color: #ffffff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 4px; text-transform: uppercase; margin-bottom: 6px; letter-spacing: 0.5px;
+}
+.dark-theme .vm-badge { background-color: var(--accent-yellow); color: #0b2545; }
+.visi-misi-box p { font-size: 14px; color: var(--text-main); line-height: 1.5; }
+.misi-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.misi-list li { font-size: 13.5px; color: var(--text-muted); line-height: 1.5; display: flex; gap: 10px; align-items: flex-start; }
+.misi-list li i { margin-top: 3px; font-size: 12px; }
+
+.about-stats-layout { display: flex; flex-direction: column; gap: 20px; }
+.about-card-info { background-color: var(--primary-blue); color: #ffffff; padding: 30px; border-radius: 16px; border-bottom: 4px solid var(--accent-yellow); }
+.about-card-info .info-icon { font-size: 28px; color: var(--accent-yellow); margin-bottom: 12px; }
+.about-card-info h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+.about-card-info p { font-size: 13px; color: #cbd5e1; line-height: 1.6; }
+
+.about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.stat-card { background-color: var(--bg-light); border: 1px solid var(--border-color); padding: 25px; border-radius: 12px; text-align: center; }
+.stat-card h3 { font-size: 32px; color: var(--accent-yellow); font-weight: 800; }
+.stat-card p { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+/* LAYOUT STRUKTUR ORGANISASI HIERARKI */
+.struktur-row { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; width: 100%; }
+.v-line { width: 3px; height: 40px; background-color: var(--border-color); margin: 0 auto; }
+
+/* KOTAK KEPENGURUSAN UTAMA */
+.org-card {
+    background-color: var(--bg-primary); border: 2px solid var(--border-color); border-radius: 12px; padding: 25px; text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: all 0.3s;
+}
+.org-card:hover { transform: translateY(-5px); border-color: var(--accent-yellow); }
+.card-pembina { width: 350px; border-top: 5px solid #0b2545; }
+.dark-theme .card-pembina { border-top-color: var(--accent-yellow); }
+.card-inti { width: 280px; border-top: 4px solid var(--primary-blue); }
+
+.card-tag { display: inline-block; padding: 4px 12px; font-size: 11px; font-weight: 700; border-radius: 4px; margin-bottom: 12px; text-transform: uppercase; }
+.card-pembina .card-tag { background: #0b2545; color: white; }
+.card-inti .card-tag { background: #e2e8f0; color: #0b2545; }
+.dark-theme .card-inti .card-tag { background: #1e3a5f; color: #ffffff; }
+.org-card h3 { font-size: 17px; font-weight: 800; color: var(--text-main); }
+.org-card p { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+/* STYLING KHUSUS BAGIAN KELOMPOK 6 BIDANG */
+.bidang-container-title { text-align: center; margin: 20px 0 35px 0; }
+.bidang-container-title h4 { font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); background: var(--border-color); display: inline-block; padding: 6px 18px; border-radius: 50px; }
+.dark-theme .bidang-container-title h4 { color: #ffffff; background: #1e3a5f; }
+
+/* Menjadi 3 kolom simetris (atas 3 kotak, bawah 3 kotak) */
+.bidang-grid-layout { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
+.bidang-box {
+    background-color: var(--bg-primary); border: 1px solid var(--border-color); border-top: 4px solid var(--accent-yellow); border-radius: 12px; padding: 22px 15px; text-align: center; transition: all 0.3s;
+}
+.bidang-box:hover { transform: translateY(-5px); background-color: var(--primary-blue); border-color: var(--primary-blue); }
+.bidang-box:hover h3, .bidang-box:hover .b-icon, .bidang-box:hover .b-kader p { color: #ffffff !important; }
+
+.b-icon { font-size: 26px; color: var(--primary-blue); margin-bottom: 12px; }
+.dark-theme .b-icon { color: var(--accent-yellow); }
+.bidang-box h3 { font-size: 14.5px; font-weight: 800; min-height: 42px; display: flex; align-items: center; justify-content: center; }
+.b-line { width: 30px; height: 2px; background-color: var(--border-color); margin: 12px auto; }
+.b-kader { text-align: left; background-color: var(--bg-light); padding: 10px; border-radius: 6px; }
+.bidang-box:hover .b-kader { background-color: rgba(255,255,255,0.1); }
+.b-kader p { font-size: 12px; color: var(--text-main); margin-bottom: 4px; line-height: 1.4; }
+.b-kader p strong { color: var(--accent-yellow); }
+
+/* SYSTEM MODAL: RUANG BELAJAR SCREEN LAYOUT */
+.belajar-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: var(--bg-primary); z-index: 10000; display: flex; flex-direction: column; }
+.belajar-container { width: 100%; height: 100%; display: flex; flex-direction: column; }
+.belajar-header { padding: 20px 40px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background-color: var(--bg-light); }
+.belajar-title-block h2 { font-size: 22px; font-weight: 800; }
+.belajar-title-block p { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+.text-accent { color: var(--accent-yellow); }
+.btn-close-belajar { background-color: #ef4444; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 13px; cursor: pointer; }
+
+.belajar-body-layout { display: grid; grid-template-columns: 350px 1fr; flex: 1; overflow: hidden; }
+.belajar-sidebar { border-right: 1px solid var(--border-color); background-color: var(--bg-light); padding: 25px; overflow-y: auto; }
+.belajar-sidebar h4 { font-size: 14px; color: var(--text-main); margin-bottom: 15px; text-transform: uppercase; }
+.jurnal-menu-links { display: flex; flex-direction: column; gap: 12px; }
+
+.jurnal-menu-item { background-color: var(--bg-primary); border: 1px solid var(--border-color); padding: 16px; border-radius: 10px; text-align: left; cursor: pointer; transition: all 0.2s; outline: none; }
+.jurnal-menu-item:hover { border-color: var(--accent-yellow); transform: translateX(3px); }
+.jurnal-menu-item .item-tag { font-size: 10px; font-weight: 700; color: var(--accent-yellow); text-transform: uppercase; }
+.jurnal-menu-item h5 { font-size: 14px; font-weight: 700; color: var(--text-main); margin: 6px 0; }
+.jurnal-menu-item small { font-size: 11px; color: var(--text-muted); }
+.active-menu { border-left: 5px solid var(--accent-yellow) !important; background-color: rgba(254, 193, 7, 0.08) !important; border-color: var(--accent-yellow) !important; }
+
+.belajar-main-reader { padding: 40px 60px; overflow-y: auto; background-color: var(--bg-primary); }
+.reader-placeholder { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); text-align: center; }
+.reader-placeholder i { font-size: 64px; color: var(--border-color); margin-bottom: 20px; }
+.reader-content { max-width: 750px; margin: 0 auto; }
+.reader-meta { display: flex; gap: 20px; font-size: 13px; color: var(--text-muted); margin-bottom: 15px; }
+.jurnal-badge-bidang { background-color: var(--bg-light); color: var(--accent-yellow); padding: 3px 10px; border-radius: 4px; font-weight: 600; font-size: 12px; }
+.reader-content h1 { font-size: 32px; font-weight: 800; color: var(--text-main); }
+.reader-line { width: 100%; height: 2px; background-color: var(--border-color); margin: 25px 0; }
+.reader-paragraphs p { font-size: 16px; color: var(--text-muted); line-height: 1.8; margin-bottom: 20px; text-align: justify; }
+
+/* DATABASE TABEL STYLE */
+.search-container { position: relative; max-width: 500px; margin: 0 auto 30px auto; }
+.search-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+#search-input { width: 100%; padding: 12px 15px 12px 45px; border: 2px solid var(--border-color); background-color: var(--bg-primary); color: var(--text-main); border-radius: 8px; outline: none; }
+#search-input:focus { border-color: var(--accent-yellow); }
+
+.table-wrapper { background-color: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; }
+.member-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; }
+.member-table th { background-color: var(--primary-blue); color: #ffffff; padding: 15px 20px; }
+.member-table td { padding: 15px 20px; border-bottom: 1px solid var(--border-color); color: var(--text-muted); }
+
+/* WARNA STATUS KADER AKTIF MENJADI HIJAU REFRESHING */
+.status-badge { 
+    background-color: rgba(40, 167, 69, 0.15); 
+    color: #28a745; 
+    padding: 4px 10px; 
+    border-radius: 6px; 
+    font-size: 12px; 
+    font-weight: 700; 
+}
+.dark-theme .status-badge { 
+    color: #34d399; /* Hijau emerald yang terang di mode gelap */
+}
+
+.footer { background-color: #0b2545; color: #cbd5e1; padding: 25px 0; text-align: center; font-size: 13px; border-top: 4px solid var(--accent-yellow); }
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 1100px) {
+    .bidang-grid-layout { grid-template-columns: repeat(3, 1fr); }
+    .about-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .bidang-grid-layout { grid-template-columns: 1fr; }
+    .belajar-body-layout { grid-template-columns: 1fr; }
+    .belajar-sidebar { height: 230px; border-right: none; border-bottom: 1px solid var(--border-color); }
+    .belajar-main-reader { padding: 20px; }
+}
+
+/* =========================================================================
+   PERBAIKAN RESPONSIF KHUSUS LAYAR HP (MOBILE OPTIMIZATION)
+   ========================================================================= */
+@media (max-width: 768px) {
+    /* 1. Paksa layout Ruang Belajar jadi memanjang ke bawah (vertikal), bukan ke samping */
+    .belajar-body-layout { 
+        display: flex; 
+        flex-direction: column; 
+        overflow-y: auto; 
+    }
+
+    /* 2. Setel Sidebar Menu di atas agar tidak terlalu makan tempat */
+    .belajar-sidebar { 
+        width: 100% !important; 
+        height: 200px !important; /* Batasi tinggi menu di HP */
+        border-right: none; 
+        border-bottom: 2px solid var(--border-color); 
+        padding: 15px;
+        flex-shrink: 0; /* Biar menunya gak mengkeret */
+    }
+
+    /* 3. Bikin menu list di dalam sidebar bisa di-scroll ke bawah dengan lancar */
+    .jurnal-menu-links {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    /* 4. Setel area Ruang Baca di bagian bawah agar lega dan pas di layar HP */
+    .belajar-main-reader { 
+        width: 100% !important;
+        padding: 20px 15px !important; 
+        overflow-y: visible; /* Serahkan scroll utama ke body layout */
+    }
+
+    /* 5. Kecilin ukuran font judul materi di HP biar gak kebesaran */
+    .reader-content h1 { 
+        font-size: 22px !important; 
+        line-height: 1.3;
+    }
+    
+    .reader-paragraphs p {
+        font-size: 14.5px !important;
+        line-height: 1.6;
+    }
+
+    /* 6. Atur Header Modal Ruang Belajar di HP biar pas */
+    .belajar-header {
+        padding: 15px 20px !important;
+    }
+    .belajar-title-block h2 {
+        font-size: 16px !important;
+    }
+}

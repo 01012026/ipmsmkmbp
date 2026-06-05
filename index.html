@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPM Premium - Portal Informasi Terpadu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">IPM<span>SMKMBP</span></a>
+            <ul class="nav-links">
+                <li><a href="#hero-section">Beranda</a></li>
+                <li><a href="#about-section">Tentang</a></li>
+                <li><a href="#struktur-section">Struktur</a></li>
+                <li><a href="#member-section">Anggota</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="open-belajar-btn" class="btn-belajar"><i class="fa-solid fa-book-open"></i> Ruang Belajar</button>
+                <button id="theme-toggle" class="nav-btn"><i class="fa-solid fa-moon"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <header id="hero-section" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
+            <span class="badge">Ikatan Pelajar Muhammadiyah</span>
+            <h1>PR IPM SMK MUHAMMADIYAH BELIK</h1>
+            <p>Mengemban misi dakwah amar ma'ruf nahi munkar di kalangan pelajar menuju generasi berkemajuan yang kreatif, ilmiah, dan berakhlak mulia.</p>
+            <div class="hero-buttons">
+                <button onclick="bukaRuangBelajar()" class="btn-primary-click"><i class="fa-solid fa-graduation-cap"></i> Masuk Ruang Belajar</button>
+                <a href="#member-section" class="btn-secondary">Cari Data Anggota</a>
+            </div>
+        </div>
+    </header>
+
+    <div id="ruang-belajar-screen" class="belajar-overlay hidden">
+        <div class="belajar-container">
+            <div class="belajar-header">
+                <div class="belajar-title-block">
+                    <h2><i class="fa-solid fa-book-bookmark text-accent"></i> Ruang Belajar &  Ilmiah</h2>
+                    <p>Silakan pilih dan klik materi jurnal yang ingin kamu pelajari hari ini</p>
+                </div>
+                <button id="close-belajar-btn" class="btn-close-belajar">&times; Tutup Menu</button>
+            </div>
+
+            <div class="belajar-body-layout">
+                <div class="belajar-sidebar">
+                    <h4><i class="fa-solid fa-list-ol"></i> Daftar Arsip Materi</h4>
+                    <div id="jurnal-menu-list" class="jurnal-menu-links"></div>
+                </div>
+
+                <div class="belajar-main-reader">
+                    <div id="jurnal-placeholder" class="reader-placeholder">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                        <h3>Selamat Datang di Ruang Baca</h3>
+                        <p>Silakan klik salah satu judul materi di sebelah kiri untuk mulai membaca kajian secara lengkap.</p>
+                    </div>
+                    <div id="jurnal-reader-content" class="reader-content hidden">
+                        <div class="reader-meta">
+                            <span id="read-tanggal"><i class="fa-regular fa-calendar"></i> -</span>
+                            <span id="read-bidang" class="jurnal-badge-bidang">-</span>
+                        </div>
+                        <h1 id="read-judul">Judul Jurnal</h1>
+                        <div class="reader-line"></div>
+                        <div id="read-text-body" class="reader-paragraphs"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="about-section" class="section container">
+        <div class="about-grid" data-aos="fade-up" data-aos-duration="1000">
+            
+            <div class="about-text">
+                <div class="section-title" style="text-align: left; margin-bottom: 25px;">
+                    <h2>Tentang Ikatan Pelajar Muhammadiyah</h2>
+                    <div class="line" style="margin: 12px 0 0 0;"></div>
+                </div>
+                
+                <p class="about-p">
+                    <b>Ikatan Pelajar Muhammadiyah (IPM)</b> adalah Organisasi Otonom Muhammadiyah yang bergerak di kalangan pelajar. Berdiri sejak 18 Juli 1961, IPM mengemban misi suci sebagai gerakan dakwah Islam amar ma'ruf nahi munkar di kalangan remaja, sekaligus menjadi wadah pencetak kader perserikatan, umat, dan bangsa.
+                </p>
+                <p class="about-p">
+                    Melalui semboyan khasnya yang diambil dari Al-Qur'an Surat Al-Qalam ayat 1: <i>"Nuun, Wal Qalami Wamaa Yasthuruun"</i> (Demi pena dan apa yang dituliskannya), IPM berkomitmen penuh untuk terus menghidupkan tradisi literasi, ilmu pengetahuan, keagamaan, serta kreativitas tanpa batas guna melahirkan generasi emas yang berakhlak mulia dan berkemajuan.
+                </p>
+
+                <div class="visi-misi-box">
+                    <div class="vm-item">
+                        <span class="vm-badge">Visi Utama</span>
+                        <p>Terwujudnya pelajar Muhammadiyah yang ilmuwan, berkemajuan, dan berakhlak mulia dalam jalinan ukhuwah Islamiyah.</p>
+                    </div>
+                    <div class="vm-item" style="margin-top: 15px;">
+                        <span class="vm-badge">Misi Gerakan</span>
+                        <ul class="misi-list">
+                            <li><i class="fa-solid fa-check text-accent"></i> Menggencarkan gerakan pemurnian dan penguatan aqidah Islam di kalangan pelajar.</li>
+                            <li><i class="fa-solid fa-check text-accent"></i> Membudayakan tradisi berpikir kritis, ilmiah, dan literasi yang adaptif.</li>
+                            <li><i class="fa-solid fa-check text-accent"></i> Mengasah kreativitas, minat, bakat, serta kemandirian wirausaha kader.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-stats-layout">
+                <div class="about-card-info">
+                    <i class="fa-solid fa-circle-info info-icon"></i>
+                    <h3>Portal Digital Terpadu</h3>
+                    <p>Website ini dirancang secara khusus untuk mempermudah tertib administrasi database anggota ranting sekaligus menjadi perpustakaan mini untuk mengakses materi kajian keilmuan secara instan.</p>
+                </div>
+                
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <h3 id="total-anggota-badge">33</h3>
+                        <p>Kader Terdata</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="total-jurnal-badge">3+</h3>
+                        <p>Koleksi Materi</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="struktur-section" class="section bg-light">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Struktur Kepengurusan Ranting</h2>
+                <p>Formasi nahkoda gerakan ikatan periode aktif</p>
+                <div class="line"></div>
+            </div>
+
+            <div class="struktur-row level-1" data-aos="fade-up">
+                <div class="org-card card-pembina">
+                    <div class="card-tag">Pembina IPM</div>
+                    <h3>Fauzan Amiruloh</h3>
+                    <p>Penasihat & Pengarah Organisasi</p>
+                </div>
+            </div>
+
+            <div class="v-line"></div>
+
+            <div class="struktur-row level-2" data-aos="fade-up" data-aos-delay="100">
+                <div class="org-card card-inti">
+                    <div class="card-tag tag-inti">Ketua Umum</div>
+                    <h3>Abid Wal Husnuzhan</h3>
+                    <p>Mandat Utama & Kebijakan</p>
+                </div>
+                <div class="org-card card-inti">
+                    <div class="card-tag tag-inti">Sekretaris Umum</div>
+                    <h3>Yeni Widayanti</h3>
+                    <p>Administrasi & Kesekretariatan</p>
+                </div>
+                <div class="org-card card-inti">
+                    <div class="card-tag tag-inti">Bendahara Umum</div>
+                    <h3>Rizqi Nafila Azahro</h3>
+                    <p>Manajemen Keuangan & Anggaran</p>
+                </div>
+            </div>
+
+            <div class="v-line"></div>
+
+            <!-- LEVEL 3: BIDANG-BIDANG (6 Bidang) -->
+            <div class="bidang-container-title" data-aos="fade-up">
+                <h4>Jajaran Fokus Bidang Pergerakan</h4>
+            </div>
+            
+            <div class="bidang-grid-layout">
+                <!-- 1. PERKADERAN -->
+                <div class="bidang-box" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="b-icon"><i class="fa-solid fa-users-gear"></i></div>
+                    <h3>Bidang Perkaderan</h3>
+                    <div class="b-line"></div>
+                    <div class="b-kader">
+                        <p><strong>Kabid:</strong> Rita Rifatun Hasanah</p>
+                        <p><strong>Sekbid:</strong> Al Fahri Saputra</p>
+                    </div>
+                </div>
+
+                <!-- 2. PIP (Pengkajian Ilmu Pengetahuan) -->
+                <div class="bidang-box" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="b-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3>Pengkajian Ilmu Pengetahuan (PIP)</h3>
+                    <div class="b-line"></div>
+                    <div class="b-kader">
+                        <p><strong>Kabid:</strong> Farhan Fauzan</p>
+                        <p><strong>Sekbid:</strong> -</p>
+                    </div>
+                </div>
+
+                <!-- 3. KDI -->
+                <div class="bidang-box" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="b-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+                    <h3>Kajian Dakwah Islam (KDI)</h3>
+                    <div class="b-line"></div>
+                    <div class="b-kader">
+                        <p><strong>Kabid:</strong> Febi Oktavianti</p>
+                        <p><strong>Sekbid:</strong> -</p>
+                    </div>
+                </div>
+
+                <!-- 4. ADVOKASI -->
+                <div class="bidang-box" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="b-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <h3>Bidang Advokasi</h3>
+                    <div class="b-line"></div>
+                    <div class="b-kader">
+                        <p><strong>Kabid:</strong> Zalfa Khaulia</p>
+                        <p><strong>Sekbid:</strong> -</p>
+                    </div>
+                </div>
+
+                <!-- 5. ASBO -->
+                <div class="bidang-box" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="b-icon"><i class="fa-solid fa-palette"></i></div>
+                    <h3>Bidang ASBO</h3>
+                    <div class="b-line"></div>
+                    <div class="b-kader">
+                        <p><strong>Kabid:</strong> Deni Rifiansah</p>
+                        <p><strong>Sekbid:</strong> -</p>
+                    </div>
+                </div>
+
+                <!-- 6. KEWIRAUSAHAAN -->
+                <div class="bidang-box" data-aos="zoom-in" data-aos-delay="350">
+                    <div class="b-icon"><i class="fa-solid fa-store"></i></div>
+                    <h3>Kewirausahaan</h3>
+                    <div class="b-line"></div>
+                    <div class="b-kader">
+                        <p><strong>Kabid:</strong> Elsa Fitri Ariyani</p>
+                        <p><strong>Sekbid:</strong> -</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="member-section" class="section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Database Anggota Resmi</h2>
+                <p>Data kader aktif yang telah terverifikasi dalam sistem pimpinan</p>
+                <div class="line"></div>
+            </div>
+            
+            <div class="search-container" data-aos="fade-up" data-aos-delay="100">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="search-input" placeholder="Ketik nama atau ID anggota untuk mencari...">
+            </div>
+
+            <div class="table-wrapper" data-aos="fade-up" data-aos-delay="200">
+                <table class="member-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>ID Anggota</th>
+                            <th>Nama Lengkap</th>
+                            <th>Status Kader</th>
+                        </tr>
+                    </thead>
+                    <tbody id="member-table-body">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 PR IPM SMK Muhammadiyah Belik</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ once: false, mirror: true });</script>
+    
+    <script src="materi.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
